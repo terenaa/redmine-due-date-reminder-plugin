@@ -4,7 +4,11 @@ module Reminder
       if context[:controller] && (context[:controller].is_a?(MyController))
         <<-SRC
         <script type='text/javascript'>
-          $('#no_self_notified').parent().parent().append($('#reminder_notification'));
+        (function ($) {
+          $(function () {
+            $('#pref_no_self_notified').parent().parent().append($('#reminder_notification'));
+          });
+        })(jQuery);
         </script>
         SRC
       end
@@ -14,9 +18,10 @@ module Reminder
       <<-SRC
       <p id='reminder_notification'>
         #{context[:form].text_field :reminder_notification, :required => true, :size => 10,
-                                    :value => context[:user].reminder_notification}
+                                    :value => context[:user].reminder_notification,
+                                    :style => 'margin-left:5px'}
         <br/>
-        <em>#{label_tag 'text_comma_separated', l(:text_comma_separated)}</em>
+        <small><em>#{label_tag 'text_comma_separated', l(:text_comma_separated)}</em></small>
       </p>
       SRC
     end
