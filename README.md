@@ -1,4 +1,4 @@
-# Due Date Reminder plugin for Redmine [![Build Status](https://travis-ci.org/f0y/due_date_reminder.png?branch=redmine-2.x)](https://travis-ci.org/f0y/due_date_reminder)
+# Due Date Reminder plugin for Redmine
 
 Plugin for Redmine project that sends notification to assignee if due date is coming.
 
@@ -24,7 +24,7 @@ There are a few versions of the plugin:
 ## Installation
 
     cd /home/user/path_to_you_app/
-    git clone git://github.com/f0y/due_date_reminder.git plugins/due_date_reminder
+    git clone git://github.com/terenaa/redmine-due-date-reminder-plugin.git plugins/due_date_reminder
     cd plugins/due_date_reminder; git checkout <YOUR BRANCH HERE - see above>
 
 For Redmine 1.3.x and Redmine 1.4.x
